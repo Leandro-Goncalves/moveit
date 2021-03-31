@@ -3,7 +3,7 @@ import NextAuth from 'next-auth';
 import Adapters from 'next-auth/adapters';
 import { session } from 'next-auth/client';
 import Providers from 'next-auth/providers'
-import { connectToDatabase } from '../../../databases';
+import { connectToDatabase } from '../../../databases'; 
 
 export default (req, res) => 
   NextAuth(req, res, {
