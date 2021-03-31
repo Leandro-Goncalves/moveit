@@ -29,7 +29,6 @@ export default function Login() {
   return(
     <motion.div
       className={styles.container}
-      exit={{opacity:0}}
       animate="animate"
       initial="initial"
       variants={stagger}

@@ -43,9 +43,6 @@ export default function Home(props: HomeProps) {
     >
       <motion.div 
         className={styles.container}
-        initial={{ opacity:0 }}
-        animate={{ opacity:1 }}
-        exit={{opacity:0}}
       >
         <Head>
           <title>Início | move.it</title>

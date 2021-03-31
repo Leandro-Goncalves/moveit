@@ -1,6 +1,4 @@
 import { createContext, useState, ReactNode, useEffect } from 'react';
-import Cookies from 'js-cookie';
-import challenges from '../../challenges.json';
 import { LevelUpModal } from '../components/LevelUpModal';
 import axios from 'axios';
 import { getSession } from 'next-auth/client';
@@ -70,7 +68,9 @@ export function ChallengesProvider({
     setIsLevelUpModalOpen(false);
   }
 
-  function startNewChallenge() {
+  async function startNewChallenge() {
+    const request = await axios.get("/loadChallenge")
+    const challenges = request.data
     const ramdomChallengeIndex = Math.floor(Math.random() * challenges.length);
     const challenge = challenges[ramdomChallengeIndex];
 

@@ -45,9 +45,6 @@ export default function Leaderboard(props:HomeProps) {
   return (
     <motion.div 
       className={styles.container}
-      initial={{ opacity:0 }}
-      animate={{ opacity:1 }}
-      exit={{opacity:0}}
     >
       <LateralBar/>
       <h1>Leaderboard</h1>

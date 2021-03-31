@@ -4,11 +4,11 @@ import { connectToDatabase } from '../../databases';
 export default async (req: NowRequest, res: NowResponse) => {
   try{
     const db = await connectToDatabase(process.env.URL_CONECCT)
-    const collections = db.collection("usersData");
-    const challenge = await collections.find().project({ _id: 0 }).sort({ level: -1}).toArray()
-    console.log(challenge)
-    res.send({success: true})
-  } catch(err) {
+    const collections = db.collection("challenges");
+    const challenges = await collections.find({}).toArray();
+    //Math.floor(Math.random() * 100)
+    res.send({challenges})
+  } catch {
     res.send({success:false})
   }
 }
