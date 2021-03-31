@@ -25,7 +25,7 @@ export default (req, res) =>
         const userData = await collections.findOne({email: session.user.email});
         if(!userData){
           await collections.insertOne({
-            email: session.user.email,
+            email: session.user.email, 
             challengesCompleted: 0,
             currentExperience: 0,
             level:1,
