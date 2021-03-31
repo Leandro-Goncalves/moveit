@@ -1,0 +1,80 @@
+.container {
+  height: 100vh;
+  max-width: 992px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+  padding-top: 4rem;
+}
+
+.container > h1 {
+  color: var(--title);
+  margin-bottom: 2.5rem;
+}
+
+.table {
+  width: 100%;
+  border-spacing: 0 0.5rem;
+  font-weight: 500;
+}
+
+.table th {
+  color: var(--text);
+  font-weight: 700;
+  text-align: left;
+  padding-left: 2rem;
+  opacity: 0.5;
+}
+
+.table td {
+  background-color: var(--white);
+  padding: 1rem 2rem;
+}
+
+.table tr > th:first-child {
+  transform: translateX(-4px);
+  width: 72px;
+  text-align: center;
+  padding-left: 0;
+}
+
+.table tr > td:first-child {
+  transform: translateX(-4px);
+  border-radius: 5px;
+  font-size: 1.5rem;
+}
+
+.table tr > td:nth-child(2) {
+  border-radius: 5px 0 0 5px;
+}
+
+.userContent {
+  display: flex;
+  align-items: center;
+}
+
+.userContent > div {
+  margin-left: 1rem;
+}
+
+.userContent > div > h3 {
+  margin-bottom: 7px;
+  color: var(--title);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.userContent > div > img {
+  width: 16px;
+  height: 16px;
+  margin-right: 9px;
+}
+
+.userContent img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+
+.blue {
+  color: var(--blue);
+}

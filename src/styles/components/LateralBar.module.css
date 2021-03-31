@@ -1,0 +1,134 @@
+.container {
+  width: 50px;
+  height: 100vh;
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+  filter: drop-shadow(0px 0px 60px rgba(0, 0, 0, 0.05));
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.container:hover {
+  width: 112px;
+}
+
+.container > img {
+  width: 30px;
+  position: fixed;
+  top: 2rem;
+  transition: all 0.2s;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.item:hover {
+  color: var(--blue);
+}
+
+.item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 56px;
+  transition: color 0.2s;
+}
+
+.item + .item {
+  margin-top: 1rem;
+}
+
+.active > svg {
+  color: var(--blue);
+}
+
+.active::after {
+  content: "";
+  position: absolute;
+  background-color: var(--blue);
+  width: 4px;
+  border-radius: 0 20px 20px 0;
+  height: 56px;
+  left: 0;
+  transform: translateX(-4px);
+  transition: all 0.2s;
+}
+
+.container:hover .active::after {
+  transform: translateX(0);
+}
+
+.container:hover > img {
+  width: 48px;
+}
+
+.exit {
+  position: fixed;
+  bottom: 2rem;
+
+  border: 0;
+  background-color: transparent;
+  display: flex;
+  transition: color 0.2s;
+
+  color: var(--text);
+}
+
+.exit:hover {
+  color: var(--blue);
+}
+
+@media (max-width: 1050px) {
+  .container {
+    width: 100vw;
+    height: 50px;
+    background: var(--white);
+  }
+
+  .container:hover {
+    width: 100vw;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: row;
+    flex: 0;
+  }
+
+  .item + .item {
+    margin-top: 0;
+    margin-left: 1rem;
+  }
+
+  .exit {
+    bottom: 0;
+    right: 2rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .container > img {
+    top: 0;
+    left: 2rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .container:hover > img {
+    width: 30px;
+  }
+
+  .container:hover .active::after {
+    transform: translateX(-4px);
+  }
+}

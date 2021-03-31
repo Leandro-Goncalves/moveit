@@ -1,0 +1,23 @@
+.gitButton {
+  height: 70px;
+  width: 100%;
+  border-radius: 5px;
+  margin: 20px 0px;
+  display: flex;
+  background: var(--white);
+  border: 0;
+
+  justify-content: center;
+  align-items: center;
+  color: var(--title);
+  font-size: 1.25rem;
+  font-weight: 600;
+
+  transition: color 0.2s, background 0.2s;
+}
+
+.gitButton:hover {
+  background: var(--title);
+  color: var(--white);
+  box-shadow: 0 0 5px var(--title);
+}
