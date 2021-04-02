@@ -1,8 +1,12 @@
+import axios from 'axios';
+import { getSession } from 'next-auth/client';
 import { createContext, ReactNode, useContext, useEffect, useState } from 'react'
+import { CountDownConfig } from '../components/CountdownConfig';
 import { ChallengesContext } from './ChallengesContext';
 
 interface CountdownProviderProps {
   children: ReactNode;
+  timeOut: number
 }
 
 interface CountdownContextData {
@@ -12,22 +16,43 @@ interface CountdownContextData {
   isActive: boolean;
   startCountdown: () => void;
   resetCountdown: () => void;
+  isCoundownConfigModalOpen: boolean;
+  setTimeOut: (timeOut:number) => Promise<void>;
+  openCountDownModal:() => void;
+  closeCountDownModal:() => void;
 }
 
 export const CountdownContext = createContext({} as CountdownContextData )
 
 let countdownTimeout: NodeJS.Timeout;
 
-export function CountdownProvider({ children }: CountdownProviderProps) {
+export function CountdownProvider({ timeOut, children }: CountdownProviderProps) {
 
   const { startNewChallenge } = useContext(ChallengesContext);
 
-  const [time, setTime] = useState(60 * 1);
+  const [time, setTime] = useState(timeOut ?? 60);
   const [isActive, setIsActive] = useState(false);
   const [hasFinish, setHasFinished] = useState(false);
 
+  const [isCoundownConfigModalOpen, setIsCoundownConfigModalOpen] = useState(false);
+
   const minutes = Math.floor(time / 60);
   const seconds = time % 60;
+
+  async function setTimeOut(timeout:number) {
+    setTime(timeout);
+    setIsCoundownConfigModalOpen(false)
+    const {user} = await getSession();
+    axios.post('/api/timeout',{email:user.email, time:timeout})
+  }
+  
+  function openCountDownModal(){
+    setIsCoundownConfigModalOpen(true)
+  }
+
+  function closeCountDownModal(){
+    setIsCoundownConfigModalOpen(false)
+  }
 
   function startCountdown() {
     setIsActive(true);
@@ -36,7 +61,7 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
   function resetCountdown() {
     clearTimeout(countdownTimeout);
     setIsActive(false);
-    setTime(60 * 1);
+    setTime(timeOut ?? 60);
     setHasFinished(false);
   }
 
@@ -57,9 +82,14 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
       hasFinish,
       isActive,
       startCountdown,
-      resetCountdown
+      resetCountdown,
+      isCoundownConfigModalOpen,
+      setTimeOut,
+      openCountDownModal,
+      closeCountDownModal
     }}>
       {children}
+      { isCoundownConfigModalOpen && <CountDownConfig/>}
     </CountdownContext.Provider>
   )
 }

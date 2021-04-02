@@ -22,6 +22,7 @@
 
 .countdownContaner > div span {
   flex: 1;
+  position: relative;
 }
 
 .countdownContaner > div span:first-child {
@@ -35,6 +36,17 @@
 .countdownContaner > span {
   font-size: 6.25rem;
   margin: 0 0.25rem;
+}
+
+.countdownConfig {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+
+  border: 0;
+  background-color: transparent;
+  font-size: 0px;
+  color: var(--title);
 }
 
 .CountdownButton {

@@ -28,9 +28,10 @@ export default (req, res) =>
             email: session.user.email, 
             challengesCompleted: 0,
             currentExperience: 0,
-            level:1,
+            level:0,
             name: session.user.name,
-            image: session.user.image
+            image: session.user.image,
+            timeOut: 1800
           });
         }
         return {

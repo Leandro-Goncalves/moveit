@@ -1,5 +1,6 @@
 import { createContext, useState, ReactNode, useEffect } from 'react';
 import { LevelUpModal } from '../components/LevelUpModal';
+import { CountDownConfig } from '../components/CountdownConfig'
 import axios from 'axios';
 import { getSession } from 'next-auth/client';
 
@@ -69,10 +70,8 @@ export function ChallengesProvider({
   }
 
   async function startNewChallenge() {
-    const request = await axios.get("/loadChallenge")
-    const challenges = request.data
-    const ramdomChallengeIndex = Math.floor(Math.random() * challenges.length);
-    const challenge = challenges[ramdomChallengeIndex];
+    const request = await axios.get("/api/loadChallenge")
+    const {challenge} = request.data
 
     setActiveChallenge(challenge);
 
@@ -120,7 +119,7 @@ export function ChallengesProvider({
         resetChallenge,
         experienceToNextLevel,
         completeChallenge,
-        closeLevelUpModal
+        closeLevelUpModal,
       }}
     >
       {children}

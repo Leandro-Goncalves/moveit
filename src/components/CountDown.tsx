@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useContext, useEffect, useState } from 'react'
+import { BsGear } from 'react-icons/bs';
 import { ChallengesContext } from '../contexts/ChallengesContext';
 import { CountdownContext } from '../contexts/CountdownContext';
 import styles from '../styles/components/Countdown.module.css'
@@ -23,7 +24,8 @@ export function Countdown() {
     hasFinish,
     isActive,
     startCountdown,
-    resetCountdown
+    resetCountdown,
+    openCountDownModal
   } = useContext(CountdownContext);
 
   const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('')
@@ -39,7 +41,20 @@ export function Countdown() {
         <span>:</span>
         <div>
           <span>{secondsLeft}</span>
-          <span>{secondsRight}</span>
+          <span>
+            <motion.button
+              className={styles.countdownConfig}
+              onClick={openCountDownModal}
+              whileHover={{
+                rotateZ: 30
+              }}
+            >
+              <BsGear size="1.5rem"/>
+            </motion.button>
+
+            {secondsRight}
+
+          </span>
         </div>
       </motion.div>
 

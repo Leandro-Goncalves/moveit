@@ -1,0 +1,78 @@
+.overlay {
+  background-color: rgba(242, 243, 245, 0.8);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: var(--white);
+  width: 100%;
+  max-width: 500px;
+  padding: 4rem 3rem;
+  border-radius: 5px;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  position: relative;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.grid > button {
+  background-color: var(--white);
+  width: 100%;
+  height: 70px;
+  border-radius: 5px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Rajdhani";
+  font-weight: 600;
+  font-size: 2.5rem;
+  border: 0;
+  color: var(--text);
+}
+
+.grid > button:after {
+  content: "min";
+  font-size: 2rem;
+}
+
+.currentTime {
+  background-color: var(--blue) !important;
+  color: var(--white) !important;
+}
+
+.hours {
+  margin: 0 auto;
+  margin-top: 1rem;
+
+  background-color: var(--white);
+  width: 80%;
+  height: 70px;
+  border-radius: 5px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Rajdhani";
+  font-weight: 600;
+  font-size: 3rem;
+  border: 0;
+  color: var(--text);
+}
+
+.hours:after {
+  content: "Hora";
+  font-size: 2.5rem;
+}

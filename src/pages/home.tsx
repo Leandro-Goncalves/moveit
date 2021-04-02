@@ -23,6 +23,7 @@ interface HomeProps {
   challengesCompleted: number;
   image: string;
   name: string;
+  timeout: number
 }
 
 const stagger = {
@@ -50,7 +51,9 @@ export default function Home(props: HomeProps) {
         
         <ExperienceBar />
         <LateralBar/>
-        <CountdownProvider>
+        <CountdownProvider
+          timeOut={props.timeout}
+        >
           <section>
             <motion.div variants={stagger} initial="initial" animate="animate">
               <Profile url={props.image} name={props.name}/>
@@ -91,7 +94,8 @@ export const getServerSideProps: GetServerSideProps = async ({req, res}) => {
       currentExperience: Number(data.currentExperience),
       challengesCompleted: Number(data.challengesCompleted),
       image: data.image,
-      name: data.name
+      name: data.name,
+      timeout:data.timeOut ?? (60 * 5)
     } as HomeProps
   }
 
