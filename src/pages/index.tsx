@@ -1,10 +1,9 @@
 import styles from '../styles/page/Login.module.css'
-import { useRouter } from 'next/router'
-import { useEffect } from 'react';
 import { GitButton } from '../components/GitButton';
 import { getSession } from 'next-auth/client'
 import { GetServerSideProps } from 'next';
 import { motion } from 'framer-motion';
+import Head from 'next/head';
 
 const fadeUp = {
   initial: {
@@ -27,35 +26,40 @@ const stagger = {
 
 export default function Login() {
   return(
-    <motion.div
-      className={styles.container}
-      animate="animate"
-      initial="initial"
-      variants={stagger}
-    >
-      <div className={styles.itensContainer}>
-        <motion.img
-          src="logo-full.svg"
-          alt="logo"
-          variants={fadeUp}
-        />
+    <>
+      <Head>
+        <title>Início | move.it</title>
+      </Head>
+      <motion.div
+        className={styles.container}
+        animate="animate"
+        initial="initial"
+        variants={stagger}
+      >
+        <div className={styles.itensContainer}>
+          <motion.img
+            src="logo-full.svg"
+            alt="logo"
+            variants={fadeUp}
+          />
 
-        <motion.h1
-          variants={fadeUp}
-        >Bem-vindo</motion.h1>
-        <motion.div
-          className={styles.loginText}
-          variants={fadeUp}
-        >
-          <img src="/icons/git-logo.svg" alt="git logo"/>
-          <div>
-            <h2>Faça login com seu Github</h2>
-            <h2>para começar</h2>
-          </div>
-        </motion.div>
-        <GitButton/>
-      </div>
-    </motion.div>
+          <motion.h1
+            variants={fadeUp}
+          >Bem-vindo</motion.h1>
+          <motion.div
+            className={styles.loginText}
+            variants={fadeUp}
+          >
+            <img src="/icons/git-logo.svg" alt="git logo"/>
+            <div>
+              <h2>Faça login com seu Github</h2>
+              <h2>para começar</h2>
+            </div>
+          </motion.div>
+          <GitButton/>
+        </div>
+      </motion.div>
+    </>
   )
 }
 

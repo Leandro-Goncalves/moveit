@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/client";
+import Head from "next/head";
 import { useEffect, useState } from "react";
 import { LateralBar } from "../components/LateralBar";
 import { LeanderBoardCellPhone } from "../components/leaderboardCellphone";
@@ -43,20 +44,24 @@ export default function Leaderboard(props:HomeProps) {
   }, []);
 
   return (
-    <motion.div 
-      className={styles.container}
-    >
-      <LateralBar/>
-      <h1>Leaderboard</h1>
-      {isCellphone
-        ? (
-          <LeanderBoardCellPhone users={props.users}/>
-        ) :(
-          <LeanderBoardTable users={props.users}/>
-        )
-      }
-      
+    <>
+      <Head>
+        <title>Leaderboard | move.it</title>
+      </Head>
+      <motion.div 
+        className={styles.container}
+      >
+        <LateralBar/>
+        <h1>Leaderboard</h1>
+        {isCellphone
+          ? (
+            <LeanderBoardCellPhone users={props.users}/>
+          ) :(
+            <LeanderBoardTable users={props.users}/>
+          )
+        }
     </motion.div>
+    </>
   )
 }
 
