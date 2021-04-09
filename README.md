@@ -5,6 +5,9 @@
 # Sobre o projeto
   MoveIt é um projeto desenvolvido na [Nlw4](https://github.com/rocketseat-education/nlw-04-reactjs) e modificado adicionando [login](https://next-auth.js.org), [animações](https://www.framer.com/motion/), leanderboard e varias funcionalidades novas.
 
+# Deploy
+  Quer ver como o site está sem ter que compilar? É só acessar o link: https://moveit-gules-ten.vercel.app
+
 # Layout web
 <p align="center">
   <div style="display: flex; margin-bottom: 30px">
