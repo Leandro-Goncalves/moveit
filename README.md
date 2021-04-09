@@ -11,12 +11,12 @@
 # Layout web
 <p align="center">
   <div style="display: flex; margin-bottom: 30px">
-    <img src="files/img/web/login.png" alt="tela de login" style="margin-right: 30px">
-    <img src="files/img/web/home.png" alt="tela de home">
+    <img src="files/img/web/login.png" width="50%" height="50%" alt="tela de login"  style="margin-right: 30px">
+    <img src="files/img/web/home.png" width="50%" height="50%" alt="tela de home">
   </div>
   <div style="display: flex">
-    <img src="files/img/web/levelup.png" alt="tela de level up" style="margin-right: 30px">
-    <img src="files/img/web/leaderboard.png" alt="tela de placar">
+    <img src="files/img/web/levelup.png" width="50%" height="50%" alt="tela de level up" style="margin-right: 30px">
+    <img src="files/img/web/leaderboard.png" width="50%" height="50%" alt="tela de placar">
   </div>
 </p>
 
