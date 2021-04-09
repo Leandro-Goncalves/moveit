@@ -1,34 +1,110 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <img src="files/img/logo.svg" height="100" width="175" alt="move.it" />
+</p>
 
-## Getting Started
+# Sobre o projeto
+  MoveIt é um projeto desenvolvido na [Nlw4](https://github.com/rocketseat-education/nlw-04-reactjs) e modificado adicionando [login](https://next-auth.js.org), [animações](https://www.framer.com/motion/), leanderboard e varias funcionalidades novas.
 
-First, run the development server:
+# Layout web
+<p align="center">
+  <div style="display: flex; margin-bottom: 30px">
+    <img src="files/img/web/login.png" alt="tela de login" style="margin-right: 30px">
+    <img src="files/img/web/home.png" alt="tela de home">
+  </div>
+  <div style="display: flex">
+    <img src="files/img/web/levelup.png" alt="tela de level up" style="margin-right: 30px">
+    <img src="files/img/web/leaderboard.png" alt="tela de placar">
+  </div>
+</p>
+
+# Layout mobile
+<p align="center">
+  <img src="files/img/mobile/login.png" height="340" alt="tela de login mobile" />
+  <img src="files/img/mobile/home.png" height="340" alt="tela de home mobile" />
+  <img src="files/img/mobile/levelup.png" height="340" alt="tela de level up mobile" />
+  <img src="files/img/mobile/leaderboard.png" height="340" alt="tela de placar mobile" />
+</p>
+
+# 🛠 Tecnologias
+As seguintes ferramentas foram usadas na construção do projeto:
+
+### front-end
+
+- [axios](https://www.npmjs.com/package/axios)
+- [js-cookie](https://www.npmjs.com/package/js-cookie)
+- [typescript](https://www.typescriptlang.org)
+- [axios](https://www.npmjs.com/package/axios)
+- [framer-motion](https://www.npmjs.com/package/framer-motion)
+- [next-auth](https://next-auth.js.org)
+- [nextjs-progressbar](https://www.npmjs.com/package/nextjs-progressbar)
+- [react-icons](https://react-icons.github.io/react-icons/)
+
+### back-end
+- [mongodb](https://www.npmjs.com/package/mongodb)
+
+
+# Back-End
+O back-end foi construído em usando serverless seguindo os seguintes caminhos:
+* /api
+  * /challengesCompleted - troca o numero de desafios completos
+  * /currentExperience - troca o numero de experiencia
+  * /leaderboard - returna do dados de ranking
+  * /levelUp - troca o level
+  * /loadChallenge - troca o numero de experiencia
+  * /challengesCompleted - troca o numero de desafios completados
+
+# 🚀 Como executar o projeto
+
+💡 Como o back-end está em serverless não é necessário executar nenhuma configuração separada para ele.
+
+## Pré-requisitos
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+
+ * [Git](https://git-scm.com)
+ * [Node.js](https://nodejs.org)
+ * [VSCode](https://code.visualstudio.com) ou outro editor de codigos
+
+## 🧭 Rodando a aplicação
+
+⚠️ Quando clonar a aplicação não se esqueça de:
+ - Criar um arquivo .env com os seguintes dados:
+   - GITHUB_CLIENT_ID - id do github
+   - GITHUB_CLIENT_SECRET - secret do github 
+   - NEXTAUTH_URL - url do site
+   - AUTH_SECRETS - auth do next
+   - JWT_SECRET - jwt secret do next
+  
 
 ```bash
-npm run dev
-# or
-yarn dev
+# Clone este repositório
+$ git clone https://github.com/Leandro-Goncalves/moveit
+# Acesse a pasta do projeto no seu terminal/cmd
+$ cd moveit
+
+# Instale as dependências
+$ npm install
+# ou
+$ yarn
+
+# Execute a aplicação em modo de desenvolvimento
+$ npm run start
+# ou
+$ yarn start
+
+# A aplicação será aberta na porta:3000 - acesse http://localhost:3000
 ```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Author
+Feito com ❤️ por Leandro Gonçalves [Entre em contato!](mailto:leandrogoncalvesprofissional@hotmail.com)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+<a href="https://github.com/Leandro-Goncalves/">
+  <img
+    width="150px"
+    src="https://github.com/Leandro-Goncalves.png"
+    alt=""
+  />
+ <br />
+ <sub><b>Leandro Gonçalves</b></sub></a>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+---
